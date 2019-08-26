@@ -1,1 +1,1 @@
-# support-of-fire-brigades-server
+# Support of fire brigades server
