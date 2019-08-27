@@ -25,12 +25,12 @@ export class FireStationsController {
     @repository(FireStationsRepository)
     public fireStationsRepository: FireStationsRepository,
 
-    @repository(FireTrucksRepository)
-    public fireTrucks: FireTrucks,
-    @repository(FireStationEquipmentsRepository)
-    public fireStationEquipments: FireStationEquipments,
-    @repository(FirefightersRepository)
-    public firefighters: Firefighters
+    // @repository(FireTrucksRepository)
+    // public fireTrucks: FireTrucks,
+    // @repository(FireStationEquipmentsRepository)
+    // public fireStationEquipments: FireStationEquipments,
+    // @repository(FirefightersRepository)
+    // public firefighters: Firefighters
   ) { }
 
   @post('/fireStations', {

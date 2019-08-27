@@ -10,16 +10,16 @@ export class PermissionsRepository extends DefaultCrudRepository<
   PermissionsRelations
   > {
 
-  public firefighters: BelongsToAccessor<Firefighters, typeof Firefighters.prototype.id>;
+  // public firefighters: BelongsToAccessor<Firefighters, typeof Firefighters.prototype.id>;
 
   constructor(
     @inject('datasources.supportOfFireBrigades') dataSource: SupportOfFireBrigadesDataSource,
 
-    @repository.getter('FirefightersRepository')
-    protected getFirefightersRepository: Getter<FirefightersRepository>
+    // @repository.getter('FirefightersRepository')
+    // protected getFirefightersRepository: Getter<FirefightersRepository>
 
   ) {
     super(Permissions, dataSource);
-    this.firefighters = this.createBelongsToAccessorFor('firefighters', getFirefightersRepository);
+    // this.firefighters = this.createBelongsToAccessorFor('firefighters', getFirefightersRepository);
   }
 }

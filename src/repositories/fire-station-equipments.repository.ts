@@ -10,16 +10,16 @@ export class FireStationEquipmentsRepository extends DefaultCrudRepository<
   FireStationEquipmentsRelations
   > {
 
-  public readonly fireStations: BelongsToAccessor<FireStations, typeof FireStations.prototype.id>;
+  // public readonly fireStations: BelongsToAccessor<FireStations, typeof FireStations.prototype.id>;
 
   constructor(
     @inject('datasources.supportOfFireBrigades') dataSource: SupportOfFireBrigadesDataSource,
 
-    @repository.getter('FireStationsRepository')
-    protected getFireStationsRepository: Getter<FireStationsRepository>,
+    // @repository.getter('FireStationsRepository')
+    // protected getFireStationsRepository: Getter<FireStationsRepository>,
 
   ) {
     super(FireStationEquipments, dataSource);
-    this.fireStations = this.createBelongsToAccessorFor('fireStations', getFireStationsRepository);
+    // this.fireStations = this.createBelongsToAccessorFor('fireStations', getFireStationsRepository);
   }
 }

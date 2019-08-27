@@ -26,8 +26,8 @@ export class Permissions extends Entity {
   })
   type?: string;
 
-  @belongsTo(() => Firefighters)
-  firefightersId?: string;
+  // @belongsTo(() => Firefighters)
+  // firefightersId?: string;
 
   constructor(data?: Partial<Permissions>) {
     super(data);

@@ -38,6 +38,14 @@ export class FireTrucks extends Entity {
   })
   pumpCapacity?: number;
 
+  @property({
+    type: 'string'
+  })
+  fireStationsId: 'string';
+
+  @property.array(FireTruckEquipment)
+  fireTruckEquipment: FireTruckEquipment[];
+
   // @hasMany(() => FireTruckEquipment)
   // fireTruckEquipment?: FireTruckEquipment[];
 

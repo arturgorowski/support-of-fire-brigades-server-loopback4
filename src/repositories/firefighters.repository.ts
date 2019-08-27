@@ -11,23 +11,23 @@ export class FirefightersRepository extends DefaultCrudRepository<
   FirefightersRelations
   > {
 
-  public permissions: HasOneRepositoryFactory<Permissions, typeof Permissions.prototype.id>;
-  public readonly fireStations: BelongsToAccessor<FireStations, typeof FireStations.prototype.id>;
+  // public permissions: HasOneRepositoryFactory<Permissions, typeof Permissions.prototype.id>;
+  // public readonly fireStations: BelongsToAccessor<FireStations, typeof FireStations.prototype.id>;
 
   constructor(
     @inject('datasources.supportOfFireBrigades') dataSource: SupportOfFireBrigadesDataSource,
 
-    @repository.getter('Permissions')
-    protected getPermissions: Getter<PermissionsRepository>,
+    // @repository.getter('Permissions')
+    // protected getPermissions: Getter<PermissionsRepository>,
 
-    @repository.getter('FireStationsRepository')
-    protected getFireStationsRepository: Getter<FireStationsRepository>,
+    // @repository.getter('FireStationsRepository')
+    // protected getFireStationsRepository: Getter<FireStationsRepository>,
 
   ) {
     super(Firefighters, dataSource);
 
-    this.permissions = this.createHasOneRepositoryFactoryFor('permissions', getPermissions);
-    this.fireStations = this.createBelongsToAccessorFor('fireStations', getFireStationsRepository);
+    // this.permissions = this.createHasOneRepositoryFactoryFor('permissions', getPermissions);
+    // this.fireStations = this.createBelongsToAccessorFor('fireStations', getFireStationsRepository);
 
   }
 }

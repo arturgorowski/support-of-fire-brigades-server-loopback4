@@ -40,8 +40,8 @@ export class FireTruckEquipment extends Entity {
   })
   quantity?: string;
 
-  @belongsTo(() => FireTrucks)
-  fireTrucksId?: string;
+  // @belongsTo(() => FireTrucks)
+  // fireTrucksId?: string;
 
   constructor(data?: Partial<FireTruckEquipment>) {
     super(data);

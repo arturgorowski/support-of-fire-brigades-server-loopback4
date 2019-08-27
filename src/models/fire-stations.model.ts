@@ -4,14 +4,14 @@ import { FireStationEquipments, FireStationEquipmentsWithRelations } from './fir
 import { Firefighters, FirefightersWithRelations } from './firefighters.model';
 
 @model({
-  settings: {
-    strictObjectIDCoercion: true
-  }
+  // settings: {
+  //   strictObjectIDCoercion: true
+  // }
 })
 export class FireStations extends Entity {
   @property({
     type: 'string',
-    mongodb: { dataType: 'ObjectId' },
+    mongodb: { dataType: 'ObjectID' },
     id: true
   })
   id: string;
@@ -22,21 +22,16 @@ export class FireStations extends Entity {
   })
   name: string;
 
-  // @property({
-  //   name: 'fireTrucks',
-  //   type: 'object',
-  //   // Specify the JSON validation rules here
-  //   jsonSchema: {
-  //     maxLength: 30,
-  //     minLength: 10,
-  //   },
-  // })
-  // public fireTrucks: object;
-
-  // @hasMany(() => FireTrucks, { keyTo: 'fireStationsId' })
+  // @property.array(FireTrucks)
   // fireTrucks: FireTrucks[];
 
-  @embedsMany(() => FireTrucks)
+  @property.array(FireStationEquipments)
+  fireStationEquipments: FireStationEquipments[];
+
+  @property.array(Firefighters)
+  firefighters: Firefighters[];
+
+  @hasMany(() => FireTrucks)
   fireTrucks: FireTrucks[];
 
   // @hasMany(() => FireStationEquipments)
@@ -53,8 +48,8 @@ export class FireStations extends Entity {
 export interface FireStationsRelations {
 
   fireTrucks: FireTrucskWithRelations[];
-  // fireStationEquipments?: FireStationEquipmentsWithRelations[];
-  // firefighters?: FirefightersWithRelations[];
+  fireStationEquipments?: FireStationEquipmentsWithRelations[];
+  firefighters?: FirefightersWithRelations[];
 }
 
 export type FireStationsWithRelations = FireStations & FireStationsRelations;

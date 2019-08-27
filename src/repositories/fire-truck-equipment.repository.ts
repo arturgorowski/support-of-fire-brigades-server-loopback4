@@ -10,16 +10,16 @@ export class FireTruckEquipmentRepository extends DefaultCrudRepository<
   FireTruckEquipmentRelations
   > {
 
-  public fireTrucks: BelongsToAccessor<FireTrucks, typeof FireTrucks.prototype.id>;
+  // public fireTrucks: BelongsToAccessor<FireTrucks, typeof FireTrucks.prototype.id>;
 
   constructor(
     @inject('datasources.supportOfFireBrigades') dataSource: SupportOfFireBrigadesDataSource,
 
-    @repository.getter('FireTrucksRepository')
-    protected getFireTruckRepository: Getter<FireTrucksRepository>
+    // @repository.getter('FireTrucksRepository')
+    // protected getFireTruckRepository: Getter<FireTrucksRepository>
 
   ) {
     super(FireTruckEquipment, dataSource);
-    this.fireTrucks = this.createBelongsToAccessorFor('fireTrucks', getFireTruckRepository);
+    // this.fireTrucks = this.createBelongsToAccessorFor('fireTrucks', getFireTruckRepository);
   }
 }

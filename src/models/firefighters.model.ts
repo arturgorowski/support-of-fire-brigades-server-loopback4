@@ -43,11 +43,14 @@ export class Firefighters extends Entity {
   })
   email?: string;
 
-  @belongsTo(() => FireStations)
-  fireStationsId?: string;
+  // @property.array(Permissions)
+  // permissions: Permissions[];
 
-  @hasOne(() => Permissions)
-  permissions?: Permissions;
+  // @belongsTo(() => FireStations)
+  // fireStationsId?: string;
+
+  // @hasOne(() => Permissions)
+  // permissions?: Permissions;
 
   constructor(data?: Partial<Firefighters>) {
     super(data);
